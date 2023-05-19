@@ -27,7 +27,7 @@ let topScore;
 divIntro.addEventListener("animationend", gererNbAnimations);
 
 // temporary call // add animation later ///////////////////////////////////////////////////////////////
-afficherQusetions();
+// afficherQusetions();
 
 //fonction pour enlever la section d'intro
 function gererNbAnimations() {

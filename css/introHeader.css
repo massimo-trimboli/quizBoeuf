@@ -44,10 +44,7 @@ section {
 }
 
 .scene-intro {
-    /* display: flex; */
-    /* temporairement lenlever pour tester */
-    display: none;
-    /* background-color: orange; */
+    display: flex;
     height: 100vh;
 }
 
