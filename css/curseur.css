@@ -1,0 +1,42 @@
+body{
+    cursor: none;
+}
+
+.curseur {
+    z-index: 1000;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 3px solid yellow;
+    rotate: 45deg;
+    
+    transition: rotate 1s, width 0.5s, heigt 0.5s;
+    pointer-events: none;
+}
+
+.curseur::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border: 3px solid yellow;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+    rotate: 45deg;
+
+    transition: rotate 1s;
+}
+
+.hover {
+    rotate: 360deg;
+    height: 40px;
+    width: 40px;
+}
+
+.hover::after {
+    rotate: -675deg;
+    height: 20px;
+    width: 20px;
+    top: calc(50% - 13px);
+    left: calc(50% - 13px);
+}

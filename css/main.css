@@ -1,0 +1,88 @@
+:root {
+    --couleur-principale: rgb(174, 14, 14);
+    --couleur-secondaire: white;
+}
+
+body {
+    /* overflow: hidden; */
+}
+
+.scene-question{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.la-question{
+    font-size: 2rem;
+    width: 350px;
+}
+
+.les-choix{
+    /* border: 1px solid white; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+}
+
+.choix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.75rem;
+    border: 3px solid var(--couleur-secondaire);
+    padding: 20px;
+    width: 105px;
+
+    transition: background-color 0.75s;
+}
+
+.choix:hover{
+    background-color: rgb(80, 40, 8);
+}
+
+.choix::after{
+    content: "";
+    position: absolute;
+    background-color: var(--couleur-secondaire);
+    left: 0;
+    right: 100%;
+    top: 0;
+    bottom: 90%;
+
+    transition: background-color 1s, right 0.75s;
+}
+
+.choix:hover::after{
+    right: 0%;
+    background-color: rgb(163, 79, 5);
+}
+
+.scene-fin {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* styles pour les ecrans moyens */
+@media screen and (min-width: 768px) {
+    .les-choix {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        width: 400px;
+    }
+}
+
+/* styles pour les grands ecrans */
+@media screen and (min-width: 1200px) {
+    .les-choix {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        width: 1000px;
+    }
+}

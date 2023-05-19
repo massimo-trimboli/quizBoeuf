@@ -1,0 +1,153 @@
+:root {
+    --couleur-principale: rgb(174, 14, 14);
+    --couleur-secondaire: white;
+}
+
+@font-face {
+    font-family: cartoonero;
+    src: url(../police/Cartoonero.ttf);
+}
+
+body {
+    background-color: var(--couleur-principale);
+    color: var(--couleur-secondaire);
+    font-family: cartoonero;
+    margin: 0;
+}
+
+/* header //////////////////////////////////////////////////////////////////// */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    background-color: var(--couleur-principale);
+    font-size: 1.5rem;
+    height: 20vh;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 265px;
+    height: 80px;
+    border: 10px solid var(--couleur-secondaire);
+}
+
+/* section/////////////////////////////////////////////////////////////////// */
+
+section {
+    height: 80vh;
+    display: flex;
+}
+
+.scene-intro {
+    /* display: flex; */
+    /* temporairement lenlever pour tester */
+    display: none;
+    /* background-color: orange; */
+    height: 100vh;
+}
+
+.scene-intro div {
+    position: relative;
+
+    animation-name: tomber;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.scene-intro div::before {
+    content: "";
+    height: 500px;
+    width:500px;
+    background-color: var(--couleur-secondaire);
+    position: absolute;
+    top: calc(50% - 250);
+    left: calc(50% - 250px);
+    border-radius: 50%;
+    opacity: 0.3;
+
+    animation-name: spotlight;
+    animation-duration: 3s;
+    animation-delay: 3.1s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes tomber {
+    0%{
+        translate: 0 -700%;
+    }
+    20%{
+        translate: 0 700%;
+    }
+    30%{
+        translate: 700% 700%;
+    }
+    35%{
+        translate: 700% -700%;
+    }
+    40%{
+        translate: 0 -700%;
+    }
+    80%{
+        translate: 0 700%;
+    }
+    80.1%{
+        translate: 700% 700%;
+    }
+    80.2%{
+        translate: 0 -700%;
+    }
+
+    95%{
+        translate: 0 20px;
+    }
+    100%{
+        translate: 0;
+    }
+}
+
+@keyframes spotlight {
+    0%{
+        scale: 0;
+    }
+    20%{
+        scale: 1;
+    }
+    20.1%{
+        translate: 0;
+    }
+    30%{
+        translate: 50%;
+    }
+    50%{
+        translate: -50%;
+    }
+    60%{
+        translate: 0;
+    }
+    70%{
+        translate: 0 -50%;
+    }
+    80%{
+        translate: 0 50%;
+    }
+    100%{
+        translate: 0;
+    }
+    }
+
+.wipe {
+    background-color: var(--couleur-secondaire);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    translate: 0 -100%;
+}
